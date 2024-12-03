@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 10px 0;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            display: none;
+            text-align: left;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        img {
+            max-width: 80px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-pic">
+        <h1>Your Name</h1>
+        <p>Interactive Resume</p>
+
+        <button class="btn" onclick="toggleContent('education')">Education</button>
+        <div id="education" class="content">
+            <p><strong>University Name:</strong> Example University</p>
+            <p><strong>Degree:</strong> Bachelor of Science in Computer Science</p>
+        </div>
+
+        <button class="btn" onclick="toggleContent('research')">Research</button>
+        <div id="research" class="content">
+            <p>Published papers in AI and ML:</p>
+            <ul>
+                <li>Paper 1: Title, Journal, Year</li>
+                <li>Paper 2: Title, Journal, Year</li>
+            </ul>
+        </div>
+
+        <button class="btn" onclick="toggleContent('work')">Work Experience</button>
+        <div id="work" class="content">
+            <p><strong>Company:</strong> Example Corp</p>
+            <p><strong>Role:</strong> Software Engineer</p>
+            <img src="https://via.placeholder.com/80" alt="Company Logo">
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,92 +6,329 @@
     <title>Interactive Resume</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f9;
-            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaeef1;
+            color: #333;
         }
+
         .container {
-            max-width: 600px;
-            margin: auto;
-            background: #ffffff;
+            max-width: 900px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 10px;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
         .profile-pic {
             width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 10px 0;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
+
+        .profile-pic:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #cc8e20;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .info-item i {
+            display: block;
+            font-size: 20px;
+            color: #E6A833;
+            margin-bottom: 8px;
+        }
+
         .btn {
             display: block;
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            margin: 15px auto;
+            padding: 12px;
             font-size: 16px;
             color: white;
-            background-color: #007BFF;
+            background: linear-gradient(145deg, #d3d3d3, #b0b0b0);
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease-in-out;
+            font-weight: bold; /* 加粗 */
         }
+
         .btn:hover {
-            background-color: #0056b3;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 18px rgba(0, 0, 0, 0.3);
         }
+
         .content {
             display: none;
             text-align: left;
-            padding: 10px;
+            padding: 20px;
             margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
             background-color: #f9f9f9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-height: 400px;
+            overflow-y: auto;
         }
-        img {
-            max-width: 80px;
-            margin: 10px;
+
+        .timeline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
         }
+
+        .timeline .company_logo{
+            width: auto;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline .university_logo {
+            width: auto;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline .company_logo:hover,
+        .timeline .university_logo:hover {
+            transform: scale(1.2);
+        }
+
+        .timeline .details {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .timeline .title-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .timeline .title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            color: #2e3d49;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .timeline .title:hover {
+            color: #E6A833;
+            transform: scale(1.05);
+        }
+
+        .timeline .sub-title {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .timeline .time {
+            font-size: 14px;
+            font-weight: bold;
+            color: #777;
+            text-align: right;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #d6d6d6;
+            color: #1e90ff;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+            text-align: center;
+        }
+
+        .description {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        /* 加强 "Click Here" 按钮样式 */
+        .toggle-text {
+            font-size: 14px;
+            color: red;
+            font-weight: bold; /* 加粗 */
+            cursor: pointer;
+            display: inline-block;
+            margin-left: 10px;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .toggle-text.show {
+            opacity: 1;
+        }
+
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-pic">
-        <h1>Your Name</h1>
-        <p>Interactive Resume</p>
+        <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic" onclick="toggleDescription('profileDescription')">
+        <h1>Tongqing Xu</h1>
 
-        <button class="btn" onclick="toggleContent('education')">Education</button>
-        <div id="education" class="content">
-            <p><strong>University Name:</strong> Example University</p>
-            <p><strong>Degree:</strong> Bachelor of Science in Computer Science</p>
+        <div class="info">
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>Email: 1950660763@qq.com</div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>Phone: +86 18355021075</div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>Location: HeFei, China</div>
+            </div>
         </div>
 
-        <button class="btn" onclick="toggleContent('research')">Research</button>
+        <button class="btn" onclick="toggleContent('education')">🎓 Education</button>
+        <div id="education" class="content">
+            <!-- Education Section -->
+            <div class="timeline">
+                <div class="timeline-logo">
+                    <img src="images/university-logo.png" alt="University Logo" class="university_logo" onclick="toggleDescription('universityDescription')">
+                </div>
+                <div class="details">
+                    <div class="title-container">
+                        <div
+                                class="title" onclick="toggleDescription('universityDescription')">Example University
+                                <div class="badge">211</div>
+                                <div class="badge">MOE China</div>
+                        <span class="toggle-text" id="educationText" onclick="toggleDescription('universityDescription')">Click Here</span> <!-- 点击可以展开描述 -->
+                        </div> <!-- 去掉了发光效果 -->
+                        <div class="sub-title">Faculty of Computer Science</div>
+                    </div>
+                    <div class="sub-title">Bachelor of Science in Computer Science</div>
+                </div>
+                <div class="time"><strong>2015 - 2019</strong></div>
+            </div>
+
+            <div id="universityDescription" class="description">
+                <p>Example University is a prestigious university located in the heart of China. It is recognized as one of the top institutions in the country, known for its outstanding faculty and research facilities.</p>
+            </div>
+        </div>
+
+        <button class="btn" onclick="toggleContent('research')">🔬 Research</button>
         <div id="research" class="content">
-            <p>Published papers in AI and ML:</p>
+            <div class="timeline">
+                <div class="details">
+                    <div class="title">AI and ML Research</div>
+                    <div class="sub-title">Research in Artificial Intelligence and Machine Learning</div>
+                </div>
+                <div class="time"><strong>2018 - Present</strong></div>
+            </div>
+            <p><strong>Key Publications:</strong></p>
             <ul>
-                <li>Paper 1: Title, Journal, Year</li>
-                <li>Paper 2: Title, Journal, Year</li>
+                <li>**Paper 1:** *Deep Learning for AI Applications*, Journal of AI, 2021</li>
+                <li>**Paper 2:** *Efficient Machine Learning Models*, Machine Learning Journal, 2022</li>
             </ul>
         </div>
 
-        <button class="btn" onclick="toggleContent('work')">Work Experience</button>
+        <button class="btn" onclick="toggleContent('work')">💼 Work Experience</button>
         <div id="work" class="content">
-            <p><strong>Company:</strong> Example Corp</p>
-            <p><strong>Role:</strong> Software Engineer</p>
-            <img src="https://via.placeholder.com/80" alt="Company Logo">
+            <div class="timeline">
+                <div class="timeline-logo">
+                    <img src="images/company-logo.png" alt="Company Logo" class="company_logo" onclick="toggleDescription('companyDescription')">
+                </div>
+                <div class="details">
+                    <div class="title-container">
+                        <div
+                                class="title" onclick="toggleDescription('companyDescription')">Example Company
+                            <div class="badge">World Top 4 IC Design</div>
+                            <span class="toggle-text" id="workText" onclick="toggleDescription('companyDescription')">Click Here</span>
+                        </div>
+                        <div class="sub-title">Software Engineer</div>
+                    </div>
+                    <div class="sub-title">Top IC Design Firm</div>
+                </div>
+
+                <div class="time"><strong>2020 - Present</strong></div>
+            </div>
+
+            <div id="companyDescription" class="description">
+                <p>Example Company is a leader in the IC design industry, known for its innovative solutions in the semiconductor space. They are recognized globally for their cutting-edge technology and contributions to the electronics sector.</p>
+            </div>
         </div>
     </div>
 
+    <div class="footer">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </div>
+
     <script>
+        // Function to toggle the visibility of content (education, research, work, etc.)
         function toggleContent(id) {
             const content = document.getElementById(id);
+            content.classList.toggle('show');
+
+            const toggleText = content.querySelector(".toggle-text");
+            if (toggleText) {
+                toggleText.classList.add('show');
+                setTimeout(() => toggleText.classList.remove('show'), 1000);
+            }
+
             if (content.style.display === "none" || content.style.display === "") {
                 content.style.display = "block";
             } else {
                 content.style.display = "none";
             }
+        }
+
+        // Function to toggle description visibility (e.g., for university/company)
+        function toggleDescription(id) {
+            const description = document.getElementById(id);
+            description.style.display = description.style.display === "none" || description.style.display === "" ? "block" : "none";
         }
     </script>
 </body>

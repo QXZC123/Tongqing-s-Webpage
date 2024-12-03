@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tongqing's Personal Webpage </title>
+    <title>Tongqing's Personal Webpage</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,6 +11,10 @@
             padding: 0;
             background-color: #eaeef1;
             color: #333;
+        }
+
+        ul,p {
+        font-size: 13px;
         }
 
         .container {
@@ -243,11 +247,11 @@
 
             .timeline .sub-title,
             .timeline .time {
-                font-size: 12px;
+                font-size: 14px;
             }
 
             .footer {
-                font-size: 12px;
+                font-size: 14px;
             }
         }
 
@@ -285,7 +289,8 @@
 
             .timeline .sub-title,
             .timeline .time {
-                font-size: 10px;
+                font-size: 14px;
+                font-weight: bold;
             }
 
             .footer {
@@ -324,20 +329,39 @@
                 </div>
                 <div class="details">
                     <div class="title-container">
-                        <div class="title" onclick="toggleDescription('universityDescription')">Example University
+                        <div class="title" onclick="toggleDescription('universityDescription')">Hefei University of Technology
                             <div class="badge">211</div>
-                            <div class="badge">MOE China</div>
+                            <div class="badge">DAME</div>
                             <span class="toggle-text" id="educationText" onclick="toggleDescription('universityDescription')">Click Here</span>
                         </div>
-                        <div class="sub-title">Faculty of Computer Science</div>
+                        <div class="sub-title">China National Demonstration Institute of Microelectronics</div>
                     </div>
-                    <div class="sub-title">Bachelor of Science in Computer Science</div>
+                    <div class="sub-title">Master, Integrated Circuits and Integrated Systems</div>
+
                 </div>
-                <div class="time"><strong>2015 - 2019</strong></div>
+                <div class="time"><strong>2022 - 2025</strong></div>
+            </div>
+
+             <div class="timeline">
+                <div class="timeline-logo">
+                    <img src="university-logo.png" alt="University Logo" class="university_logo" onclick="toggleDescription('universityDescription')">
+                </div>
+                <div class="details">
+                    <div class="title-container">
+                        <div class="title" onclick="toggleDescription('universityDescription')">Hefei University of Technology
+                            <div class="badge">211</div>
+                            <div class="badge">DAME</div>
+                            <span class="toggle-text" id="educationText1" onclick="toggleDescription('universityDescription')">Click Here</span>
+                        </div>
+                        <div class="sub-title">China National Demonstration Institute of Microelectronics</div>
+                    </div>
+                    <div class="sub-title">Bachelor, Microelectronics Science and Engineering</div>
+                </div>
+                <div class="time"><strong>2018 - 2022</strong></div>
             </div>
 
             <div id="universityDescription" class="description">
-                <p>Example University is a prestigious university located in the heart of China. It is recognized as one of the top institutions in the country, known for its outstanding faculty and research facilities.</p>
+                <p>Hefei University of Technology (HFUT),  Hefei, Anhui Province, is a key national university directly under the Ministry of Education (DAME) of the People's Republic of China. It is jointly established by the Ministry of Education, the Ministry of Industry and Information Technology, and the Anhui Provincial Government, and jointly established by the Ministry of Education and the State Administration of Science, Technology and Industry for National Defence. HFUT is a member of China's "Double First-Class" initiative, the "211 Project" for key universities, and the "985 Project" for innovation platforms for key disciplines. It is also a member of programmes such as the "2011 Collaborative Innovation Plan", the "111 Project", the "Excellence Engineer Education and Training Programme", the "National College Student Innovation Experiment Programme", the "National College Student Innovation and Entrepreneurship Training Programme", the "National College Practice and Education Innovation and Entrepreneurship Base", and one of the first batch of national demonstration universities for deepening innovation and entrepreneurship education reform. It is also recognised as a model university for innovation and entrepreneurship education in China.</p>
             </div>
         </div>
 
@@ -345,15 +369,22 @@
         <div id="research" class="content">
             <div class="timeline">
                 <div class="details">
-                    <div class="title">AI and ML Research</div>
-                    <div class="sub-title">Research in Artificial Intelligence and Machine Learning</div>
+                    <div class="title">IC, IP/Architecture, Algorithm Optimization for Hardware</div>
+                    <div class="sub-title"><li> Lossless Image Compression and Decompression (JPEG-LS) IP Design/Verification for Real-Time Image Processing</div>
+                    <div class="sub-title"><li> AI(CNN) IP Design/Verification for Computer Vision</div>
+                    <div class="sub-title"><li> Homomorphic Encryption Algorithm and Hardware Accelerator</div>
                 </div>
-                <div class="time"><strong>2018 - Present</strong></div>
+                <div class="time"><strong>2021-Present</strong></div>
             </div>
-            <p><strong>Key Publications:</strong></p>
+            <p><strong>Granted Patent and Paper Publications:</strong></p>
             <ul>
-                <li>**Paper 1:** *Deep Learning for AI Applications*, Journal of AI, 2021</li>
-                <li>**Paper 2:** *Efficient Machine Learning Models*, Machine Learning Journal, 2022</li>
+                <li> China HQ Patent: ..许同庆，姚坦，李宁..，一种无损图像分块压缩方法、设备、存储介质，ZL 2023 1 1310528.4</li>
+                <li> China HQ Patent: 许同庆，李俊明，姚坦.，一种基于人脸识别与红外测量结合的门禁控制设备，ZL 2022 2 3125298.8</li>
+                <li> China HQ Patent: ..许同庆，郭剑博，姚坦..，一种面向全同态加密的密钥交换加速方法及可配置加速器，ZL -</li>
+                <li>Xu T, Yao T, Li N, Li J, Min X, Xiao H. A high-throughput flexible lossless
+compression and decompression architecture for color images. Int J Circ Theor Appl. 2024;1‐21. doi:10.1002/cta.
+4230</li>
+                <li>Jianbo Guo, Tongqing Xu, Zhenyang Wu, An Efficient Sparse CNN Inference Accelerator with Balanced Intra-and Inter-PE Workload. IEEE Transaction on Very Large Scale Circuit and System (TVLSI), 2024</li>
             </ul>
         </div>
 
@@ -365,26 +396,27 @@
                 </div>
                 <div class="details">
                     <div class="title-container">
-                        <div class="title" onclick="toggleDescription('companyDescription')">Example Company
-                            <div class="badge">World Top 4 IC Design</div>
-                            <span class="toggle-text" id="workText" onclick="toggleDescription('companyDescription')">Click Here</span>
+                        <div class="title" onclick="toggleDescription('companyDescription')">MediaTek(聯發科技)
+                            <div class="badge">World Top.4 IC Inc.</div>
+                            <span class="toggle-text" id="workText" onclick="toggleDescription('companyDescription')">Click</span>
                         </div>
-                        <div class="sub-title">Software Engineer</div>
+                        <div class="sub-title">DV</div>
                     </div>
-                    <div class="sub-title">Top IC Design Firm</div>
+                    <div class="sub-title">IC Intern</div>
                 </div>
 
-                <div class="time"><strong>2020 - Present</strong></div>
+                <div class="time"><strong>2024 - 2024 </strong></div>
             </div>
 
             <div id="companyDescription" class="description">
-                <p>Example Company is a leader in the IC design industry, known for its innovative solutions in the semiconductor space. They are recognized globally for their cutting-edge technology and contributions to the electronics sector.</p>
+                <p>MediaTek Inc. is the world's fourth-largest fabless semiconductor company with annual revenues of more than US$10 billion and a leading position in the markets of mobile terminals, smart home applications, wireless connectivity, and IoT products, with approximately 2 billion MediaTek-enabled devices hitting the market globally each year. for more than 25 years, MediaTek has been striving for technological innovation and market empowerment. For more than 25 years, MediaTek has been innovating and empowering markets with high-performance, low-power mobile computing, advanced communications, automotive solutions and multimedia capabilities for smartphones, Chromebooks, smart TVs, wireless communications, IoT devices, voice-assisted devices (VADs) and automotive electronics.
+Translated with DeepL.com (free version)</p>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2024 Tongqing Xu. All rights reserved.</p>
     </div>
 
     <script>

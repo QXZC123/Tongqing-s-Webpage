@@ -108,7 +108,7 @@
 
         .timeline .company_logo{
             width: auto;
-            height: 50px;
+            height: 20pt;
             object-fit: cover;
             border-radius: 8px;
             margin-right: 15px;
@@ -118,7 +118,7 @@
 
         .timeline .university_logo {
             width: auto;
-            height: 100px;
+            height: 40pt;
             object-fit: cover;
             border-radius: 8px;
             margin-right: 15px;
@@ -128,7 +128,7 @@
 
         .timeline .company_logo:hover,
         .timeline .university_logo:hover {
-            transform: scale(1.2);
+            transform: scale(1.4);
         }
 
         .timeline .details {
@@ -172,9 +172,9 @@
             display: inline-block;
             background-color: #d6d6d6;
             color: #1e90ff;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bold;
-            padding: 3px 8px;
+            padding: 1px 2px;
             border-radius: 4px;
         }
 
@@ -193,11 +193,10 @@
             border-radius: 8px;
         }
 
-        /* 加强 "Click Here" 按钮样式 */
         .toggle-text {
             font-size: 14px;
             color: red;
-            font-weight: bold; /* 加粗 */
+            font-weight: bold;
             cursor: pointer;
             display: inline-block;
             margin-left: 10px;
@@ -207,6 +206,91 @@
 
         .toggle-text.show {
             opacity: 1;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .info {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+
+            .info-item {
+                font-size: 13px;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .timeline .title {
+                font-size: 16px;
+            }
+
+            .timeline .sub-title,
+            .timeline .time {
+                font-size: 12px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-pic {
+                width: 100px;
+                height: 130px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .info-item {
+                font-size: 12px;
+            }
+
+            .btn {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .content {
+                padding: 12px;
+            }
+
+            .timeline .title {
+                font-size: 14px;
+            }
+
+            .timeline .sub-title,
+            .timeline .time {
+                font-size: 10px;
+            }
+
+            .footer {
+                font-size: 10px;
+            }
         }
 
     </style>
@@ -234,19 +318,17 @@
 
         <button class="btn" onclick="toggleContent('education')">🎓 Education</button>
         <div id="education" class="content">
-            <!-- Education Section -->
             <div class="timeline">
                 <div class="timeline-logo">
                     <img src="university-logo.png" alt="University Logo" class="university_logo" onclick="toggleDescription('universityDescription')">
                 </div>
                 <div class="details">
                     <div class="title-container">
-                        <div
-                                class="title" onclick="toggleDescription('universityDescription')">Example University
-                                <div class="badge">211</div>
-                                <div class="badge">MOE China</div>
-                        <span class="toggle-text" id="educationText" onclick="toggleDescription('universityDescription')">Click Here</span> <!-- 点击可以展开描述 -->
-                        </div> <!-- 去掉了发光效果 -->
+                        <div class="title" onclick="toggleDescription('universityDescription')">Example University
+                            <div class="badge">211</div>
+                            <div class="badge">MOE China</div>
+                            <span class="toggle-text" id="educationText" onclick="toggleDescription('universityDescription')">Click Here</span>
+                        </div>
                         <div class="sub-title">Faculty of Computer Science</div>
                     </div>
                     <div class="sub-title">Bachelor of Science in Computer Science</div>
@@ -283,8 +365,7 @@
                 </div>
                 <div class="details">
                     <div class="title-container">
-                        <div
-                                class="title" onclick="toggleDescription('companyDescription')">Example Company
+                        <div class="title" onclick="toggleDescription('companyDescription')">Example Company
                             <div class="badge">World Top 4 IC Design</div>
                             <span class="toggle-text" id="workText" onclick="toggleDescription('companyDescription')">Click Here</span>
                         </div>
@@ -307,7 +388,6 @@
     </div>
 
     <script>
-        // Function to toggle the visibility of content (education, research, work, etc.)
         function toggleContent(id) {
             const content = document.getElementById(id);
             content.classList.toggle('show');
@@ -325,7 +405,6 @@
             }
         }
 
-        // Function to toggle description visibility (e.g., for university/company)
         function toggleDescription(id) {
             const description = document.getElementById(id);
             description.style.display = description.style.display === "none" || description.style.display === "" ? "block" : "none";

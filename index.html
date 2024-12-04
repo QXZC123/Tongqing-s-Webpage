@@ -13,8 +13,8 @@
             color: #333;
         }
 
-        ul,p {
-        font-size: 13px;
+        ul, p {
+            font-size: 13px;
         }
 
         .container {
@@ -24,6 +24,23 @@
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        #languageToggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #languageToggle:hover {
+            background-color: #45a049;
         }
 
         .profile-pic {
@@ -110,7 +127,7 @@
             margin-bottom: 10px;
         }
 
-        .timeline .company_logo{
+        .timeline .company_logo {
             width: auto;
             height: 20pt;
             object-fit: cover;
@@ -147,6 +164,7 @@
         }
 
         .timeline .title {
+            display: inline-block;
             font-weight: bold;
             font-size: 18px;
             margin-bottom: 5px;
@@ -297,25 +315,25 @@
                 font-size: 10px;
             }
         }
-
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
+        <button id="languageToggle">中文</button>
         <img src="profile.jpg" alt="Profile Picture" class="profile-pic" onclick="toggleDescription('profileDescription')">
-        <h1>Tongqing Xu</h1>
+        <h1 id="name">Tongqing Xu</h1>
 
         <div class="info">
-            <div class="info-item">
+            <div class="info-item" id="email">
                 <i class="fas fa-envelope"></i>
                 <div>Email: 1950660763@qq.com</div>
             </div>
-            <div class="info-item">
+            <div class="info-item" id="phone">
                 <i class="fas fa-phone-alt"></i>
                 <div>Phone: +86 18355021075</div>
             </div>
-            <div class="info-item">
+            <div class="info-item" id="location">
                 <i class="fas fa-map-marker-alt"></i>
                 <div>Location: HeFei, China</div>
             </div>
@@ -329,61 +347,64 @@
                 </div>
                 <div class="details">
                     <div class="title-container">
-                        <div class="title" onclick="toggleDescription('universityDescription')">Hefei University of Technology
+                            <div class="title" id="universityName" onclick="toggleDescription('universityDescription')">Hefei University of Technology
                             <div class="badge">211</div>
                             <div class="badge">DAME</div>
                             <span class="toggle-text" id="educationText" onclick="toggleDescription('universityDescription')">Click Here</span>
                         </div>
-                        <div class="sub-title">China National Demonstration Institute of Microelectronics</div>
+                        <div class="sub-title" id="faculty">China National Demonstration Institute of Microelectronics</div>
                     </div>
-                    <div class="sub-title">Master, Integrated Circuits and Integrated Systems</div>
-
+                    <div class="sub-title" id="degree">Master, Integrated Circuits and Integrated Systems</div>
                 </div>
                 <div class="time"><strong>2022 - 2025</strong></div>
             </div>
 
-             <div class="timeline">
+            <div class="timeline">
                 <div class="timeline-logo">
                     <img src="university-logo.png" alt="University Logo" class="university_logo" onclick="toggleDescription('universityDescription')">
                 </div>
                 <div class="details">
                     <div class="title-container">
-                        <div class="title" onclick="toggleDescription('universityDescription')">Hefei University of Technology
+                            <div class="title" id="universityName1" onclick="toggleDescription('universityDescription')">Hefei University of Technology
                             <div class="badge">211</div>
                             <div class="badge">DAME</div>
                             <span class="toggle-text" id="educationText1" onclick="toggleDescription('universityDescription')">Click Here</span>
                         </div>
-                        <div class="sub-title">China National Demonstration Institute of Microelectronics</div>
+                        <div class="sub-title" id="faculty1">China National Demonstration Institute of Microelectronics</div>
                     </div>
-                    <div class="sub-title">Bachelor, Microelectronics Science and Engineering</div>
+                    <div class="sub-title" id="degree1">Bachelor, Microelectronics Science and Engineering</div>
                 </div>
                 <div class="time"><strong>2018 - 2022</strong></div>
             </div>
 
             <div id="universityDescription" class="description">
-                <p>Hefei University of Technology (HFUT),  Hefei, Anhui Province, is a key national university directly under the Ministry of Education (DAME) of the People's Republic of China. It is jointly established by the Ministry of Education, the Ministry of Industry and Information Technology, and the Anhui Provincial Government, and jointly established by the Ministry of Education and the State Administration of Science, Technology and Industry for National Defence. HFUT is a member of China's "Double First-Class" initiative, the "211 Project" for key universities, and the "985 Project" for innovation platforms for key disciplines. It is also a member of programmes such as the "2011 Collaborative Innovation Plan", the "111 Project", the "Excellence Engineer Education and Training Programme", the "National College Student Innovation Experiment Programme", the "National College Student Innovation and Entrepreneurship Training Programme", the "National College Practice and Education Innovation and Entrepreneurship Base", and one of the first batch of national demonstration universities for deepening innovation and entrepreneurship education reform. It is also recognised as a model university for innovation and entrepreneurship education in China.</p>
+                <p>Hefei University of Technology (HFUT), Hefei, Anhui Province, is a key national university directly under the Ministry of Education (DAME) of the People\'s Republic of China. It is jointly established by the Ministry of Education, the Ministry of Industry and Information Technology, and the Anhui Provincial Government, and jointly established by the Ministry of Education and the State Administration of Science, Technology and Industry for National Defence. HFUT is a member of China\'s "Double First-Class" initiative, the "211 Project" for key universities, and the "985 Project" for innovation platforms for key disciplines. It is also a member of programmes such as the "2011 Collaborative Innovation Plan", the "111 Project", the "Excellence Engineer Education and Training Programme", the "National College Student Innovation Experiment Programme", the "National College Student Innovation and Entrepreneurship Training Programme", the "National College Practice and Education Innovation and Entrepreneurship Base", and one of the first batch of national demonstration universities for deepening innovation and entrepreneurship education reform. It is also recognised as a model university for innovation and entrepreneurship education in China.</p>
             </div>
         </div>
 
         <button class="btn" onclick="toggleContent('research')">🔬 Research</button>
         <div id="research" class="content">
             <div class="timeline">
-                <div class="details">
-                    <div class="title">IC, IP/Architecture, Algorithm Optimization for Hardware</div>
-                    <div class="sub-title"><li> Lossless Image Compression and Decompression (JPEG-LS) IP Design/Verification for Real-Time Image Processing</div>
-                    <div class="sub-title"><li> AI(CNN) IP Design/Verification for Computer Vision</div>
-                    <div class="sub-title"><li> Homomorphic Encryption Algorithm and Hardware Accelerator</div>
-                </div>
+        <div class="details">
+            <div class="title" id="researchTitle">IC, IP/Architecture, Algorithm Optimization for Hardware</div>
+            <div class="sub-title" id="researchItem1">
+                <li>Lossless Image Compression and Decompression (JPEG-LS) IP Design/Verification for Real-Time Image Processing
+            </div>
+            <div class="sub-title" id="researchItem2">
+                <li>AI(CNN) IP Design/Verification for Computer Vision
+            </div>
+            <div class="sub-title" id="researchItem3">
+                <li>Homomorphic Encryption Algorithm and Hardware Accelerator
+            </div>
+        </div>
                 <div class="time"><strong>2021-Present</strong></div>
             </div>
             <p><strong>Granted Patent and Paper Publications:</strong></p>
             <ul>
-                <li> China HQ Patent: ..许同庆，姚坦，李宁..，一种无损图像分块压缩方法、设备、存储介质，ZL 2023 1 1310528.4</li>
-                <li> China HQ Patent: 许同庆，李俊明，姚坦.，一种基于人脸识别与红外测量结合的门禁控制设备，ZL 2022 2 3125298.8</li>
-                <li> China HQ Patent: ..许同庆，郭剑博，姚坦..，一种面向全同态加密的密钥交换加速方法及可配置加速器，ZL -</li>
-                <li>Xu T, Yao T, Li N, Li J, Min X, Xiao H. A high-throughput flexible lossless
-compression and decompression architecture for color images. Int J Circ Theor Appl. 2024;1‐21. doi:10.1002/cta.
-4230</li>
+                <li id="patent1">China HQ Patent: ..许同庆，姚坦，李宁..，一种无损图像分块压缩方法、设备、存储介质，ZL 2023 1 1310528.4</li>
+                <li id="patent2">China HQ Patent: 许同庆，李俊明，姚坦.，一种基于人脸识别与红外测量结合的门禁控制设备，ZL 2022 2 3125298.8</li>
+                <li id="patent3">China HQ Patent: ..许同庆，郭剑博，姚坦..，一种面向全同态加密的密钥交换加速方法及可配置加速器，ZL -</li>
+                <li>Xu T, Yao T, Li N, Li J, Min X, Xiao H. A high-throughput flexible lossless compression and decompression architecture for color images. Int J Circ Theor Appl. 2024;1‐21. doi:10.1002/cta.4230</li>
                 <li>Jianbo Guo, Tongqing Xu, Zhenyang Wu, An Efficient Sparse CNN Inference Accelerator with Balanced Intra-and Inter-PE Workload. IEEE Transaction on Very Large Scale Circuit and System (TVLSI), 2024</li>
             </ul>
         </div>
@@ -396,21 +417,19 @@ compression and decompression architecture for color images. Int J Circ Theor Ap
                 </div>
                 <div class="details">
                     <div class="title-container">
-                        <div class="title" onclick="toggleDescription('companyDescription')">MediaTek(聯發科技)
-                            <div class="badge">World Top.4 IC Inc.</div>
+                         <div class="title" id="companyName" onclick="toggleDescription('companyDescription')">MediaTek(聯發科技)
+                         <div class="badge">World Top.4 IC Inc.</div>
                             <span class="toggle-text" id="workText" onclick="toggleDescription('companyDescription')">Click</span>
+                         </div>
                         </div>
-                        <div class="sub-title">DV</div>
-                    </div>
-                    <div class="sub-title">IC Intern</div>
+                    <div class="sub-title" id="companyRole">IC Intern</div>
                 </div>
 
-                <div class="time"><strong>2024 - 2024 </strong></div>
+                <div class="time"><strong>2024 - 2024</strong></div>
             </div>
 
             <div id="companyDescription" class="description">
-                <p>MediaTek Inc. is the world's fourth-largest fabless semiconductor company with annual revenues of more than US$10 billion and a leading position in the markets of mobile terminals, smart home applications, wireless connectivity, and IoT products, with approximately 2 billion MediaTek-enabled devices hitting the market globally each year. for more than 25 years, MediaTek has been striving for technological innovation and market empowerment. For more than 25 years, MediaTek has been innovating and empowering markets with high-performance, low-power mobile computing, advanced communications, automotive solutions and multimedia capabilities for smartphones, Chromebooks, smart TVs, wireless communications, IoT devices, voice-assisted devices (VADs) and automotive electronics.
-Translated with DeepL.com (free version)</p>
+                <p>MediaTek Inc. is the world's fourth-largest fabless semiconductor company with annual revenues of more than US$10 billion and a leading position in the markets of mobile terminals, smart home applications, wireless connectivity, and IoT products, with approximately 2 billion MediaTek-enabled devices hitting the market globally each year. for more than 25 years, MediaTek has been striving for technological innovation and market empowerment. For more than 25 years, MediaTek has been innovating and empowering markets with high-performance, low-power mobile computing, advanced communications, automotive solutions and multimedia capabilities for smartphones, Chromebooks, smart TVs, wireless communications, IoT devices, voice-assisted devices (VADs) and automotive electronics.</p>
             </div>
         </div>
     </div>
@@ -441,6 +460,42 @@ Translated with DeepL.com (free version)</p>
             const description = document.getElementById(id);
             description.style.display = description.style.display === "none" || description.style.display === "" ? "block" : "none";
         }
+
+        // Toggle between English and Chinese
+        document.getElementById('languageToggle').onclick = function() {
+            const isEnglish = document.getElementById('languageToggle').innerText === '中文';
+            document.getElementById('languageToggle').innerText = isEnglish ? 'English' : '中文';
+
+            // Switch content language
+            const elementsToToggle = [
+                {id: 'name', en: 'Tongqing Xu', cn: '许同庆'},
+                {id: 'email', en: 'Email: 1950660763@qq.com', cn: '邮箱: 1950660763@qq.com'},
+                {id: 'phone', en: 'Phone: +86 18355021075', cn: '电话: +86 18355021075'},
+                {id: 'location', en: 'Location: HeFei, China', cn: '地点: 中国合肥'},
+                {id: 'universityName', en: 'Hefei University of Technology', cn: '合肥工业大学'},
+                {id: 'universityName1', en: 'Hefei University of Technology', cn: '合肥工业大学'},
+                {id: 'faculty', en: 'China National Demonstration Institute of Microelectronics', cn: '中国国家示范性微电子学院'},
+                {id: 'faculty1', en: 'China National Demonstration Institute of Microelectronics', cn: '中国国家示范性微电子学院'},
+                {id: 'degree', en: 'Master, Integrated Circuits and Integrated Systems', cn: '硕士，集成电路与集成系统'},
+                {id: 'degree1', en: 'Bachelor, Microelectronics Science and Engineering', cn: '学士，微电子科学与工程'},
+                {id: 'researchTitle', en: 'IC, IP/Architecture, Algorithm Optimization for Hardware', cn: '硬件的IC、IP/架构、算法优化' },
+                {id: 'researchItem1', en: 'Lossless Image Compression and Decompression (JPEG-LS) IP Design/Verification for Real-Time Image Processing', cn: '无损图像压缩和解压缩（JPEG-LS）IP设计/验证用于实时图像处理' },
+                {id: 'researchItem2', en: 'AI(CNN) IP Design/Verification for Computer Vision', cn: 'AI（CNN）IP设计/验证用于计算机视觉' },
+                {id: 'researchItem3', en: 'Homomorphic Encryption Algorithm and Hardware Accelerator', cn: '同态加密算法和硬件加速器' },
+                {id: 'patent1', en: 'China HQ Patent: ..Tongqing Xu, Tan Yao, Ning Li.., A Block-Based Lossless Image Compression Method, Device, and Storage Medium, ZL 2023 1 1310528.4', cn: '中国专利：..许同庆，姚坦，李宁..，一种无损图像分块压缩方法、设备、存储介质，ZL 2023 1 1310528.4' },
+                {id: 'patent2', en: 'China HQ Patent: Tongqing Xu, Junming Li, Tan Yao, A Face Recognition and Infrared Measurement-Based Access Control Device, ZL 2022 2 3125298.8', cn: '中国专利：许同庆，李俊明，姚坦.，一种基于人脸识别与红外测量结合的门禁控制设备，ZL 2022 2 3125298.8' },
+                {id: 'patent3', en: 'China HQ Patent: ..Tongqing Xu, Jianbo Guo, Tan Yao.., A Key Exchange Acceleration Method and Configurable Accelerator for Fully Homomorphic Encryption, ZL -', cn: '中国专利：..许同庆，郭剑博，姚坦..，一种面向全同态加密的密钥交换加速方法及可配置加速器，ZL -' },
+                {id: 'companyName', en: 'MediaTek(聯發科技)', cn: 'MediaTek(聯發科技)'},
+                {id: 'companyRole', en: 'IC Intern', cn: '芯片实习生'},
+                {id: 'companyDescription', en: 'MediaTek Inc. is the world\'s fourth-largest fabless semiconductor company with annual revenues of more than US$10 billion and a leading position in the markets of mobile terminals, smart home applications, wireless connectivity, and IoT products, with approximately 2 billion MediaTek-enabled devices hitting the market globally each year. for more than 25 years, MediaTek has been striving for technological innovation and market empowerment. For more than 25 years, MediaTek has been innovating and empowering markets with high-performance, low-power mobile computing, advanced communications, automotive solutions and multimedia capabilities for smartphones, Chromebooks, smart TVs, wireless communications, IoT devices, voice-assisted devices (VADs) and automotive electronics.', cn: '联发科技股份有限公司（MediaTek Inc.）是全球第四大无晶圆厂半导体公司，年营收超过100亿美元，在移动终端、智能家居应用、无线连接技术及物联网产品等市场位居领先地位，一年约有 20亿台内建MediaTek芯片的终端产品在全球各地上市。25年以来，MediaTek 一直力求技术创新并赋能市场，为智能手机、Chromebook、智能电视、无线通信产品、物联网设备、语音助手设备（VAD）与车用电子等产品提供高效能低功耗的移动计算技术、先进的通信技术、汽车解决方案以及多媒体功能。'},
+                {id: 'universityDescription', en: 'Hefei University of Technology (HFUT), Hefei, Anhui Province, is a key national university directly under the Ministry of Education (DAME) of the People\'s Republic of China. It is jointly established by the Ministry of Education, the Ministry of Industry and Information Technology, and the Anhui Provincial Government, and jointly established by the Ministry of Education and the State Administration of Science, Technology and Industry for National Defence. HFUT is a member of China\'s "Double First-Class" initiative, the "211 Project" for key universities, and the "985 Project" for innovation platforms for key disciplines. It is also a member of programmes such as the "2011 Collaborative Innovation Plan", the "111 Project", the "Excellence Engineer Education and Training Programme", the "National College Student Innovation Experiment Programme", the "National College Student Innovation and Entrepreneurship Training Programme", the "National College Practice and Education Innovation and Entrepreneurship Base", and one of the first batch of national demonstration universities for deepening innovation and entrepreneurship education reform. It is also recognised as a model university for innovation and entrepreneurship education in China.', cn: '合肥工业大学（Hefei University of Technology），校本部位于安徽省合肥市，是中华人民共和国教育部直属全国重点大学，教育部、工信部和安徽省政府共建高校，教育部与国防科工局共建高校。是“双一流”建设高校、国家“211工程”重点建设高校、国家“985工程”优势学科创新平台建设高校。 [21]入选“2011计划”、“111计划”、卓越工程师教育培养计划、国家大学生创新性实验计划、国家级大学生创新创业训练计划、全国高校实践育人创新创业基地、全国首批深化创新创业教育改革示范高校、全国创新创业典型经验高校。'}
+            ];
+
+            elementsToToggle.forEach(element => {
+                document.getElementById(element.id).innerText = isEnglish ? element.cn : element.en;
+            });
+        };
     </script>
+
 </body>
 </html>

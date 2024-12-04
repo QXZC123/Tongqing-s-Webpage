@@ -190,6 +190,13 @@
             text-align: right;
         }
 
+        .school-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2e3d49;
+            margin-right: 8px;
+        }
+
         .badge {
             display: inline-block;
             background-color: #d6d6d6;
@@ -325,21 +332,21 @@
         <h1 id="name">Tongqing Xu</h1>
 
         <div class="info">
-            <div class="info-item" id="email">
+            <div class="info-item">
                 <i class="fas fa-envelope"></i>
-                <div>Email: 1950660763@qq.com</div>
+                <div id="email">Email: 1950660763@qq.com</div>
             </div>
-            <div class="info-item" id="phone">
+            <div class="info-item">
                 <i class="fas fa-phone-alt"></i>
-                <div>Phone: +86 18355021075</div>
+                <div id="phone">Phone: +86 18355021075</div>
             </div>
-            <div class="info-item" id="location">
+            <div class="info-item">
                 <i class="fas fa-map-marker-alt"></i>
-                <div>Location: HeFei, China</div>
+                <div id="location">Location: HeFei, China</div>
             </div>
         </div>
 
-        <button class="btn" onclick="toggleContent('education')">🎓 Education</button>
+        <button class="btn" id = "e" onclick="toggleContent('education')">🎓 Education</button>
         <div id="education" class="content">
             <div class="timeline">
                 <div class="timeline-logo">
@@ -347,11 +354,13 @@
                 </div>
                 <div class="details">
                     <div class="title-container">
-                            <div class="title" id="universityName" onclick="toggleDescription('universityDescription')">Hefei University of Technology
-                            <div class="badge">211</div>
-                            <div class="badge">DAME</div>
-                            <span class="toggle-text" id="educationText" onclick="toggleDescription('universityDescription')">Click Here</span>
-                        </div>
+                            <div class="title" onclick="toggleDescription('universityDescription')">
+                                <span class="school-name" id="universityName">Hefei University of Technology</span>
+                                <div class="badge">211</div>
+                                <div class="badge" id="bb0" >DFC</div>
+                                <div class="badge" id="b0" >DAME</div>
+                                <span class="toggle-text" id="educationText" onclick="toggleDescription('universityDescription')">Click Here</span>
+                            </div>
                         <div class="sub-title" id="faculty">China National Demonstration Institute of Microelectronics</div>
                     </div>
                     <div class="sub-title" id="degree">Master, Integrated Circuits and Integrated Systems</div>
@@ -365,11 +374,13 @@
                 </div>
                 <div class="details">
                     <div class="title-container">
-                            <div class="title" id="universityName1" onclick="toggleDescription('universityDescription')">Hefei University of Technology
-                            <div class="badge">211</div>
-                            <div class="badge">DAME</div>
-                            <span class="toggle-text" id="educationText1" onclick="toggleDescription('universityDescription')">Click Here</span>
-                        </div>
+                            <div class="title" onclick="toggleDescription('universityDescription')">
+                                <span class="school-name" id="universityName1">Hefei University of Technology</span>
+                                <div class="badge">211</div>
+                                <div class="badge" id="bb1" >DFC</div>
+                                <div class ="badge" id="b1" >DAME</div>
+                                <span class="toggle-text" id="educationText1" onclick="toggleDescription('universityDescription')">Click Here</span>
+                            </div>
                         <div class="sub-title" id="faculty1">China National Demonstration Institute of Microelectronics</div>
                     </div>
                     <div class="sub-title" id="degree1">Bachelor, Microelectronics Science and Engineering</div>
@@ -378,11 +389,11 @@
             </div>
 
             <div id="universityDescription" class="description">
-                <p>Hefei University of Technology (HFUT), Hefei, Anhui Province, is a key national university directly under the Ministry of Education (DAME) of the People\'s Republic of China. It is jointly established by the Ministry of Education, the Ministry of Industry and Information Technology, and the Anhui Provincial Government, and jointly established by the Ministry of Education and the State Administration of Science, Technology and Industry for National Defence. HFUT is a member of China\'s "Double First-Class" initiative, the "211 Project" for key universities, and the "985 Project" for innovation platforms for key disciplines. It is also a member of programmes such as the "2011 Collaborative Innovation Plan", the "111 Project", the "Excellence Engineer Education and Training Programme", the "National College Student Innovation Experiment Programme", the "National College Student Innovation and Entrepreneurship Training Programme", the "National College Practice and Education Innovation and Entrepreneurship Base", and one of the first batch of national demonstration universities for deepening innovation and entrepreneurship education reform. It is also recognised as a model university for innovation and entrepreneurship education in China.</p>
+                <p>Hefei University of Technology (HFUT), Hefei, Anhui Province, is a key national university directly under the Ministry of Education (DAME) of the People\'s Republic of China. It is jointly established by the Ministry of Education, the Ministry of Industry and Information Technology, and the Anhui Provincial Government, and jointly established by the Ministry of Education and the State Administration of Science, Technology and Industry for National Defence. HFUT is a member of China\'s "Double First-Class (DFC)" initiative, the "211 Project" for key universities, and the "985 Project" for innovation platforms for key disciplines. It is also a member of programmes such as the "2011 Collaborative Innovation Plan", the "111 Project", the "Excellence Engineer Education and Training Programme", the "National College Student Innovation Experiment Programme", the "National College Student Innovation and Entrepreneurship Training Programme", the "National College Practice and Education Innovation and Entrepreneurship Base", and one of the first batch of national demonstration universities for deepening innovation and entrepreneurship education reform. It is also recognised as a model university for innovation and entrepreneurship education in China.</p>
             </div>
         </div>
 
-        <button class="btn" onclick="toggleContent('research')">🔬 Research</button>
+        <button class="btn" id = "r" onclick="toggleContent('research')">🔬 Research</button>
         <div id="research" class="content">
             <div class="timeline">
         <div class="details">
@@ -399,7 +410,7 @@
         </div>
                 <div class="time"><strong>2021-Present</strong></div>
             </div>
-            <p><strong>Granted Patent and Paper Publications:</strong></p>
+            <p style="font-size: 18px;"><strong id="g">Granted Patent and Paper Publications:</strong></p>
             <ul>
                 <li id="patent1">China HQ Patent: ..许同庆，姚坦，李宁..，一种无损图像分块压缩方法、设备、存储介质，ZL 2023 1 1310528.4</li>
                 <li id="patent2">China HQ Patent: 许同庆，李俊明，姚坦.，一种基于人脸识别与红外测量结合的门禁控制设备，ZL 2022 2 3125298.8</li>
@@ -409,7 +420,7 @@
             </ul>
         </div>
 
-        <button class="btn" onclick="toggleContent('work')">💼 Work Experience</button>
+        <button class="btn" id = "w" onclick="toggleContent('work')">💼 Work Experience</button>
         <div id="work" class="content">
             <div class="timeline">
                 <div class="timeline-logo">
@@ -417,8 +428,8 @@
                 </div>
                 <div class="details">
                     <div class="title-container">
-                         <div class="title" id="companyName" onclick="toggleDescription('companyDescription')">MediaTek(聯發科技)
-                         <div class="badge">World Top.4 IC Inc.</div>
+                         <div class="title" onclick="toggleDescription('companyDescription')">MediaTek(聯發科技)
+                         <div class="badge" id="cb" >World Top.4 IC Inc.</div>
                             <span class="toggle-text" id="workText" onclick="toggleDescription('companyDescription')">Click</span>
                          </div>
                         </div>
@@ -471,24 +482,32 @@
                 {id: 'name', en: 'Tongqing Xu', cn: '许同庆'},
                 {id: 'email', en: 'Email: 1950660763@qq.com', cn: '邮箱: 1950660763@qq.com'},
                 {id: 'phone', en: 'Phone: +86 18355021075', cn: '电话: +86 18355021075'},
+                {id: 'e', en: '🎓 Education', cn: '🎓 教育背景'},
+                {id: 'r', en: '🔬 Research', cn: '🔬 技术研究'},
+                {id: 'w', en: '💼 Work Experience', cn: '💼 工作经历'},
                 {id: 'location', en: 'Location: HeFei, China', cn: '地点: 中国合肥'},
                 {id: 'universityName', en: 'Hefei University of Technology', cn: '合肥工业大学'},
                 {id: 'universityName1', en: 'Hefei University of Technology', cn: '合肥工业大学'},
+                {id: 'b0', en: 'DAME', cn: '教育部直属'},
+                {id: 'b1', en: 'DAME', cn: '教育部直属'},
+                {id: 'bb0', en: 'DFC', cn: '双一流'},
+                {id: 'bb1', en: 'DFC', cn: '双一流'},
+                {id: 'g', en: 'Granted Patent and Paper Publications:C', cn: '发明专利与论文:'},
                 {id: 'faculty', en: 'China National Demonstration Institute of Microelectronics', cn: '中国国家示范性微电子学院'},
                 {id: 'faculty1', en: 'China National Demonstration Institute of Microelectronics', cn: '中国国家示范性微电子学院'},
                 {id: 'degree', en: 'Master, Integrated Circuits and Integrated Systems', cn: '硕士，集成电路与集成系统'},
                 {id: 'degree1', en: 'Bachelor, Microelectronics Science and Engineering', cn: '学士，微电子科学与工程'},
-                {id: 'researchTitle', en: 'IC, IP/Architecture, Algorithm Optimization for Hardware', cn: '硬件的IC、IP/架构、算法优化' },
+                {id: 'researchTitle', en: 'IC, IP/Architecture, Algorithm Optimization for Hardware', cn: '数字芯片、IP/架构、算法优化' },
                 {id: 'researchItem1', en: 'Lossless Image Compression and Decompression (JPEG-LS) IP Design/Verification for Real-Time Image Processing', cn: '无损图像压缩和解压缩（JPEG-LS）IP设计/验证用于实时图像处理' },
                 {id: 'researchItem2', en: 'AI(CNN) IP Design/Verification for Computer Vision', cn: 'AI（CNN）IP设计/验证用于计算机视觉' },
                 {id: 'researchItem3', en: 'Homomorphic Encryption Algorithm and Hardware Accelerator', cn: '同态加密算法和硬件加速器' },
-                {id: 'patent1', en: 'China HQ Patent: ..Tongqing Xu, Tan Yao, Ning Li.., A Block-Based Lossless Image Compression Method, Device, and Storage Medium, ZL 2023 1 1310528.4', cn: '中国专利：..许同庆，姚坦，李宁..，一种无损图像分块压缩方法、设备、存储介质，ZL 2023 1 1310528.4' },
-                {id: 'patent2', en: 'China HQ Patent: Tongqing Xu, Junming Li, Tan Yao, A Face Recognition and Infrared Measurement-Based Access Control Device, ZL 2022 2 3125298.8', cn: '中国专利：许同庆，李俊明，姚坦.，一种基于人脸识别与红外测量结合的门禁控制设备，ZL 2022 2 3125298.8' },
-                {id: 'patent3', en: 'China HQ Patent: ..Tongqing Xu, Jianbo Guo, Tan Yao.., A Key Exchange Acceleration Method and Configurable Accelerator for Fully Homomorphic Encryption, ZL -', cn: '中国专利：..许同庆，郭剑博，姚坦..，一种面向全同态加密的密钥交换加速方法及可配置加速器，ZL -' },
-                {id: 'companyName', en: 'MediaTek(聯發科技)', cn: 'MediaTek(聯發科技)'},
+                {id: 'patent1', en: 'China HQ Patent: ..Tongqing Xu, Tan Yao, Ning Li.., A Block-Based Lossless Image Compression Method, Device, and Storage Medium, ZL 2023 1 1310528.4', cn: '中国专利：..许同庆，姚坦，李宁..，一种无损图像分块压缩方法、设备、存储介质，专利授权号:ZL 2023 1 1310528.4' },
+                {id: 'patent2', en: 'China HQ Patent: Tongqing Xu, Junming Li, Tan Yao, A Face Recognition and Infrared Measurement-Based Access Control Device, ZL 2022 2 3125298.8', cn: '中国专利：许同庆，李俊明，姚坦.，一种基于人脸识别与红外测量结合的门禁控制设备，专利授权号:ZL 2022 2 3125298.8' },
+                {id: 'patent3', en: 'China HQ Patent: ..Tongqing Xu, Jianbo Guo, Tan Yao.., A Key Exchange Acceleration Method and Configurable Accelerator for Fully Homomorphic Encryption, ZL -', cn: '中国专利：..许同庆，郭剑博，姚坦..，一种面向全同态加密的密钥交换加速方法及可配置加速器，专利授权号:ZL -' },
                 {id: 'companyRole', en: 'IC Intern', cn: '芯片实习生'},
-                {id: 'companyDescription', en: 'MediaTek Inc. is the world\'s fourth-largest fabless semiconductor company with annual revenues of more than US$10 billion and a leading position in the markets of mobile terminals, smart home applications, wireless connectivity, and IoT products, with approximately 2 billion MediaTek-enabled devices hitting the market globally each year. for more than 25 years, MediaTek has been striving for technological innovation and market empowerment. For more than 25 years, MediaTek has been innovating and empowering markets with high-performance, low-power mobile computing, advanced communications, automotive solutions and multimedia capabilities for smartphones, Chromebooks, smart TVs, wireless communications, IoT devices, voice-assisted devices (VADs) and automotive electronics.', cn: '联发科技股份有限公司（MediaTek Inc.）是全球第四大无晶圆厂半导体公司，年营收超过100亿美元，在移动终端、智能家居应用、无线连接技术及物联网产品等市场位居领先地位，一年约有 20亿台内建MediaTek芯片的终端产品在全球各地上市。25年以来，MediaTek 一直力求技术创新并赋能市场，为智能手机、Chromebook、智能电视、无线通信产品、物联网设备、语音助手设备（VAD）与车用电子等产品提供高效能低功耗的移动计算技术、先进的通信技术、汽车解决方案以及多媒体功能。'},
-                {id: 'universityDescription', en: 'Hefei University of Technology (HFUT), Hefei, Anhui Province, is a key national university directly under the Ministry of Education (DAME) of the People\'s Republic of China. It is jointly established by the Ministry of Education, the Ministry of Industry and Information Technology, and the Anhui Provincial Government, and jointly established by the Ministry of Education and the State Administration of Science, Technology and Industry for National Defence. HFUT is a member of China\'s "Double First-Class" initiative, the "211 Project" for key universities, and the "985 Project" for innovation platforms for key disciplines. It is also a member of programmes such as the "2011 Collaborative Innovation Plan", the "111 Project", the "Excellence Engineer Education and Training Programme", the "National College Student Innovation Experiment Programme", the "National College Student Innovation and Entrepreneurship Training Programme", the "National College Practice and Education Innovation and Entrepreneurship Base", and one of the first batch of national demonstration universities for deepening innovation and entrepreneurship education reform. It is also recognised as a model university for innovation and entrepreneurship education in China.', cn: '合肥工业大学（Hefei University of Technology），校本部位于安徽省合肥市，是中华人民共和国教育部直属全国重点大学，教育部、工信部和安徽省政府共建高校，教育部与国防科工局共建高校。是“双一流”建设高校、国家“211工程”重点建设高校、国家“985工程”优势学科创新平台建设高校。 [21]入选“2011计划”、“111计划”、卓越工程师教育培养计划、国家大学生创新性实验计划、国家级大学生创新创业训练计划、全国高校实践育人创新创业基地、全国首批深化创新创业教育改革示范高校、全国创新创业典型经验高校。'}
+                {id: 'cb', en: 'World Top.4 IC Inc.', cn: '世界第四大无晶圆芯片设计公司'},
+                {id: 'companyDescription', en: 'MediaTek Inc. is the world\'s fourth-largest fabless semiconductor company with annual revenues of more than US$10 billion and a leading position in the markets of mobile terminals, smart home applications, wireless connectivity, and IoT products, with approximately 2 billion MediaTek-enabled devices hitting the market globally each year. for more than 25 years, MediaTek has been striving for technological innovation and market empowerment. For more than 25 years, MediaTek has been innovating and empowering markets with high-performance, low-power mobile computing, advanced communications, automotive solutions and multimedia capabilities for smartphones, Chromebooks, smart TVs, wireless communications, IoT devices, voice-assisted devices (VADs) and automotive electronics.', cn: '聯發科技股份有限公司（MediaTek Inc.）總部位於台灣新竹，是全球第四大無晶圓廠半導體公司，年營收超過100億美元，在移動終端、智能家居應用、無線連接技術及物聯網產品等市場位居領先地位，一年約有20億台內建MediaTek芯片的終端產品在全球各地上市。25年以來，MediaTek一直力求技術創新並賦能市場，為智能手機、Chromebook、智能電視、無線通信產品、物聯網設備、語音助手設備（VAD）與車用電子等產品提供高效能低功耗的移動計算技術、先進的通信技術、汽車解決方案以及多媒體功能。'},
+                {id: 'universityDescription', en: 'Hefei University of Technology (HFUT), Hefei, Anhui Province, is a key national university directly under the Ministry of Education (DAME) of the People\'s Republic of China. It is jointly established by the Ministry of Education, the Ministry of Industry and Information Technology, and the Anhui Provincial Government, and jointly established by the Ministry of Education and the State Administration of Science, Technology and Industry for National Defence. HFUT is a member of China\'s "Double First-Class (DFC)" initiative, the "211 Project" for key universities, and the "985 Project" for innovation platforms for key disciplines. It is also a member of programmes such as the "2011 Collaborative Innovation Plan", the "111 Project", the "Excellence Engineer Education and Training Programme", the "National College Student Innovation Experiment Programme", the "National College Student Innovation and Entrepreneurship Training Programme", the "National College Practice and Education Innovation and Entrepreneurship Base", and one of the first batch of national demonstration universities for deepening innovation and entrepreneurship education reform. It is also recognised as a model university for innovation and entrepreneurship education in China.', cn: '合肥工业大学（Hefei University of Technology）是中华人民共和国教育部直属全国重点大学，教育部、工信部和安徽省政府共建高校，教育部与国防科工局共建高校, 是“双一流”建设高校、国家“211工程”重点建设高校、国家“985工程”优势学科创新平台建设高校。学校入选“2011计划”、“111计划”、卓越工程师教育培养计划、国家大学生创新性实验计划、国家级大学生创新创业训练计划、全国高校实践育人创新创业基地、全国首批深化创新创业教育改革示范高校、全国创新创业典型经验高校。'}
             ];
 
             elementsToToggle.forEach(element => {
